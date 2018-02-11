@@ -22,5 +22,13 @@ namespace Fish_Registration.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<Fish_Registration.Models.Captain> Captain { get; set; }
+
+        public DbSet<Fish_Registration.Models.Vessel> Vessel { get; set; }
+
+        public DbSet<Fish_Registration.Models.Project> Project { get; set; }
+
+        public DbSet<Fish_Registration.Models.CaptainVessel> CaptainVessel { get; set; }
     }
 }

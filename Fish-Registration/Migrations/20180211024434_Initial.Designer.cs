@@ -8,16 +8,17 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
-namespace Fish_Registration.Data.Migrations
+namespace FishRegistration.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180211024434_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
+                .HasAnnotation("ProductVersion", "2.0.0-rtm-26452")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Fish_Registration.Models.ApplicationUser", b =>
@@ -30,24 +31,14 @@ namespace Fish_Registration.Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<DateTime>("DOB");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<string>("FirstName");
-
-                    b.Property<int>("Height");
-
-                    b.Property<string>("LastName");
-
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
-
-                    b.Property<string>("Nationality");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);
@@ -68,8 +59,6 @@ namespace Fish_Registration.Data.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
 
-                    b.Property<int>("Weight");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -81,6 +70,76 @@ namespace Fish_Registration.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("Fish_Registration.Models.Captain", b =>
+                {
+                    b.Property<int>("CaptainId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.HasKey("CaptainId");
+
+                    b.ToTable("Captain");
+                });
+
+            modelBuilder.Entity("Fish_Registration.Models.CaptainVessel", b =>
+                {
+                    b.Property<int>("CaptainVesselId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CaptainID");
+
+                    b.Property<int>("VesselID");
+
+                    b.HasKey("CaptainVesselId");
+
+                    b.HasIndex("CaptainID");
+
+                    b.HasIndex("VesselID");
+
+                    b.ToTable("CaptainVessel");
+                });
+
+            modelBuilder.Entity("Fish_Registration.Models.Project", b =>
+                {
+                    b.Property<int>("ProjectId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CaptainVesselId");
+
+                    b.Property<DateTime>("End");
+
+                    b.Property<string>("Name");
+
+                    b.Property<DateTime>("Start");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("ProjectId");
+
+                    b.HasIndex("CaptainVesselId");
+
+                    b.ToTable("Project");
+                });
+
+            modelBuilder.Entity("Fish_Registration.Models.Vessel", b =>
+                {
+                    b.Property<int>("VesselId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CompanyOwner");
+
+                    b.Property<float>("GrossWeight");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("VesselId");
+
+                    b.ToTable("Vessel");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -189,6 +248,27 @@ namespace Fish_Registration.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Fish_Registration.Models.CaptainVessel", b =>
+                {
+                    b.HasOne("Fish_Registration.Models.Captain", "Captain")
+                        .WithMany()
+                        .HasForeignKey("CaptainID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Fish_Registration.Models.Vessel", "Vessel")
+                        .WithMany()
+                        .HasForeignKey("VesselID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Fish_Registration.Models.Project", b =>
+                {
+                    b.HasOne("Fish_Registration.Models.CaptainVessel", "GetCaptainVessel")
+                        .WithMany()
+                        .HasForeignKey("CaptainVesselId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
