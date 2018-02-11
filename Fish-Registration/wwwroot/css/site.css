@@ -25,14 +25,19 @@ body {
   /* QR code generator */ }
   body .navbar {
     background-color: #1E1D2F; }
+    body .navbar .container .navbar-header .navbar-brand .logo {
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+      position: relative;
+      right: 5px;
+      margin-top: -13px; }
   body .body-content {
     padding-left: 15px;
     padding-right: 15px; }
     body .body-content #div_profile_image {
       text-align: center;
       margin-top: 20px; }
-    body .body-content #profile_image {
-      border-radius: 100%; }
     body .body-content #profile_name {
       text-align: center;
       font-size: 42px; }
@@ -68,7 +73,3 @@ body {
     margin: 15px; }
 
 /* Hide/rearrange for smaller screens */
-@media screen and (max-width: 640px) {
-  /* Hide captions */
-  .carousel-caption {
-    display: none; } }

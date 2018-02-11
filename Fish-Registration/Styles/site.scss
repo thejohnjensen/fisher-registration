@@ -7,6 +7,21 @@ body {
 
   .navbar {
     background-color: #1E1D2F;
+
+    .container {
+      .navbar-header {
+        .navbar-brand {
+          .logo {
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            position: relative;
+            margin-top: -27px;
+            top: 10px;
+          }
+        }
+      }
+    }
   }
 
   /* Wrapping element */
@@ -18,10 +33,6 @@ body {
     #div_profile_image {
       text-align: center;
       margin-top: 20px; }
-    
-    #profile_image {
-      border-radius: 100%; 
-    }
     
     #profile_name {
       text-align: center;
@@ -81,8 +92,5 @@ body {
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 640px) {
-  /* Hide captions */
-  .carousel-caption {
-      display: none;
-  }
+  
 }
