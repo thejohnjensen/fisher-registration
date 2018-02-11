@@ -35,9 +35,7 @@ namespace Fish_Registration
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-            services.AddTransient<IVesselRepo, FakeVesselRepo>();
-            services.AddTransient<ICaptainRepo, FakeCaptainRepo>();
-            services.AddTransient<ICaptainVesselRepo, FakeCaptainVesselRepo>();
+           
 
             services.AddMvc();
         }
