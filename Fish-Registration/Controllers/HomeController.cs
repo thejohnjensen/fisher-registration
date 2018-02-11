@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Fish_Registration.Models;
@@ -12,7 +13,14 @@ namespace Fish_Registration.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            if (User.Claims.Count() == 0) 
+            {
+                return RedirectToAction(nameof(AccountController.Login), "Account");
+            }
+            else 
+            {
+                return View();
+            }
         }
 
         public IActionResult About()
