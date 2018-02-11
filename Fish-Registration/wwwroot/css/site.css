@@ -1,16 +1,25 @@
+#idCard.modal .modal-dialog .modal-content .modal-header {
+  border-bottom: none;
+  background-color: #2C52A3;
+  color: #fff; }
+
 #idCard.modal .modal-dialog .modal-content .modal-body {
   vertical-align: top;
   background-color: #1E1D2F;
   color: #fff; }
   #idCard.modal .modal-dialog .modal-content .modal-body .background-watermark {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px;
     right: 20px;
     width: 170px;
     height: 190px;
     background: url(/images/offshore-logo.png);
     background-repeat: no-repeat;
     opacity: 0.5; }
+
+#idCard.modal .modal-dialog .modal-content .modal-footer {
+  border-top: none;
+  background-color: #1E1D2F; }
 
 body {
   padding-top: 50px;

@@ -1,15 +1,22 @@
+$modal-bg: #1E1D2F;
+
 #idCard.modal {
   .modal-dialog {
     .modal-content {
+      .modal-header {
+        border-bottom: none;
+        background-color: #2C52A3;
+        color: #fff;
+      }
 
       .modal-body {
         vertical-align: top;
-        background-color: #1E1D2F;
+        background-color: $modal-bg;
         color: #fff;
 
         .background-watermark {
           position: fixed;
-          bottom: 20px;
+          bottom: 80px;
           right: 20px;
           width: 170px;
           height: 190px;
