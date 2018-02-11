@@ -7,25 +7,29 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Fish_Registration.Data;
 using Fish_Registration.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Fish_Registration.Controllers
 {
-    public class EmployeesController : Controller
+    public class ProjectsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _UserManager;
 
-        public EmployeesController(ApplicationDbContext context)
+        public ProjectsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _UserManager = userManager;
         }
 
-        // GET: Employees
+        // GET: Projects
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Employee.ToListAsync());
+            var applicationDbContext = _context.Project.Include(p => p.GetCaptainVessel);
+            return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Employees/Details/5
+        // GET: Projects/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +37,45 @@ namespace Fish_Registration.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employee
-                .SingleOrDefaultAsync(m => m.ID == id);
-            if (employee == null)
+            var project = await _context.Project
+                .Include(p => p.GetCaptainVessel)
+                .SingleOrDefaultAsync(m => m.ProjectId == id);
+            if (project == null)
             {
                 return NotFound();
             }
 
-            return View(employee);
+            return View(project);
         }
 
-        // GET: Employees/Create
+        // GET: Projects/Create
         public IActionResult Create()
         {
+            ViewData["CaptainVesselId"] = new SelectList(_context.Set<CaptainVessel>(), "CaptainVesselId", "CaptainVesselId");
             return View();
         }
 
-        // POST: Employees/Create
+        // POST: Projects/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,FirstName,LastName,Dob")] Employee employee)
+        public async Task<IActionResult> Create([Bind("ProjectId,Name,CaptainVesselId,UserId,Start,End")] Project project)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(employee);
+                var user = await _UserManager.GetUserAsync(User);
+
+                project.UserId = user.Id;
+                _context.Add(project);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(employee);
+            ViewData["CaptainVesselId"] = new SelectList(_context.Set<CaptainVessel>(), "CaptainVesselId", "CaptainVesselId", project.CaptainVesselId);
+            return View(project);
         }
 
-        // GET: Employees/Edit/5
+        // GET: Projects/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +83,23 @@ namespace Fish_Registration.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employee.SingleOrDefaultAsync(m => m.ID == id);
-            if (employee == null)
+            var project = await _context.Project.SingleOrDefaultAsync(m => m.ProjectId == id);
+            if (project == null)
             {
                 return NotFound();
             }
-            return View(employee);
+            ViewData["CaptainVesselId"] = new SelectList(_context.Set<CaptainVessel>(), "CaptainVesselId", "CaptainVesselId", project.CaptainVesselId);
+            return View(project);
         }
 
-        // POST: Employees/Edit/5
+        // POST: Projects/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,FirstName,LastName,Dob")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("ProjectId,Name,CaptainVesselId,UserId,Start,End")] Project project)
         {
-            if (id != employee.ID)
+            if (id != project.ProjectId)
             {
                 return NotFound();
             }
@@ -97,12 +108,12 @@ namespace Fish_Registration.Controllers
             {
                 try
                 {
-                    _context.Update(employee);
+                    _context.Update(project);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.ID))
+                    if (!ProjectExists(project.ProjectId))
                     {
                         return NotFound();
                     }
@@ -113,10 +124,11 @@ namespace Fish_Registration.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(employee);
+            ViewData["CaptainVesselId"] = new SelectList(_context.Set<CaptainVessel>(), "CaptainVesselId", "CaptainVesselId", project.CaptainVesselId);
+            return View(project);
         }
 
-        // GET: Employees/Delete/5
+        // GET: Projects/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +136,31 @@ namespace Fish_Registration.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employee
-                .SingleOrDefaultAsync(m => m.ID == id);
-            if (employee == null)
+            var project = await _context.Project
+                .Include(p => p.GetCaptainVessel)
+                .SingleOrDefaultAsync(m => m.ProjectId == id);
+            if (project == null)
             {
                 return NotFound();
             }
 
-            return View(employee);
+            return View(project);
         }
 
-        // POST: Employees/Delete/5
+        // POST: Projects/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var employee = await _context.Employee.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Employee.Remove(employee);
+            var project = await _context.Project.SingleOrDefaultAsync(m => m.ProjectId == id);
+            _context.Project.Remove(project);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EmployeeExists(int id)
+        private bool ProjectExists(int id)
         {
-            return _context.Employee.Any(e => e.ID == id);
+            return _context.Project.Any(e => e.ProjectId == id);
         }
     }
 }

@@ -23,10 +23,10 @@ namespace Fish_Registration.Data
             // Add your customizations after calling base.OnModelCreating(builder);
         }
 
-        public DbSet<Fish_Registration.Models.Employee> Employee { get; set; }
-
         public DbSet<Fish_Registration.Models.Captain> Captain { get; set; }
 
         public DbSet<Fish_Registration.Models.Vessel> Vessel { get; set; }
+
+        public DbSet<Fish_Registration.Models.Project> Project { get; set; }
     }
 }
