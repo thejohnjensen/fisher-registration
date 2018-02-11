@@ -27,6 +27,11 @@
     margin: 40px;
     font-size: 20px; }
 
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 640px) {
+  #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container .id-card-aside {
+    margin-left: 0; } }
+
 body {
   font-family: 'Barlow Condensed', sans-serif;
   padding-top: 50px;
@@ -84,5 +89,3 @@ body {
         background-color: #727272; }
   body #qrCode {
     margin: 15px; }
-
-/* Hide/rearrange for smaller screens */
