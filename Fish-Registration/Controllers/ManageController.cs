@@ -60,6 +60,10 @@ namespace Fish_Registration.Controllers
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,
+                Nationality = user.Nationality,
+                DOB = user.DOB,
+                Height = user.Height,
+                Weight = user.Weight,
                 StatusMessage = StatusMessage
             };
 
@@ -96,6 +100,16 @@ namespace Fish_Registration.Controllers
             {
                 var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, model.PhoneNumber);
                 if (!setPhoneResult.Succeeded)
+                {
+                    throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
+                }
+            }
+            var nationality = user.Nationality;
+            if (model.Nationality != nationality) 
+            {
+                user.Nationality = model.Nationality;
+                var setNationalityResult = await _userManager.UpdateAsync(user);
+                if (!setNationalityResult.Succeeded)
                 {
                     throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
                 }

@@ -21,5 +21,10 @@ namespace Fish_Registration.Models.ManageViewModels
         public string PhoneNumber { get; set; }
 
         public string StatusMessage { get; set; }
+
+        public string Nationality { get;set; }
+        public DateTime DOB { get;set; }
+        public int Height { get; set; }
+        public int Weight { get; set; }
     }
 }
