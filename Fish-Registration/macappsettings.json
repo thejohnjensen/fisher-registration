@@ -1,0 +1,12 @@
+{
+    "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost;Port=5432;Database=fisher_registration;Integrated Security=true;Pooling=true;"
+
+    },
+    "Logging": {
+      "IncludeScopes": false,
+      "LogLevel": {
+        "Default": "Warning"
+      }
+    }
+  }
