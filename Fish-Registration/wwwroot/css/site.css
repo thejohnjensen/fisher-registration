@@ -5,7 +5,7 @@
   #idCard.modal .modal-dialog .modal-content .modal-body .background-watermark {
     position: fixed;
     bottom: 20px;
-    right: 10px;
+    right: 20px;
     width: 170px;
     height: 190px;
     background: url(/images/offshore-logo.png);
