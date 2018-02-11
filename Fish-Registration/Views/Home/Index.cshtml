@@ -10,22 +10,18 @@
 <h1 id="profile_name">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
 
 <div id="list_container">
-    <ul id="profile_list">
-        <li>Birthdate: @Html.DisplayFor(model => model.DOB)</li>
-        <li>Nationality: @Html.DisplayFor(model => model.Nationality)</li>
-        <li>Weight: @Html.DisplayFor(model => model.Weight) kg</li>
-        <li>Height: @Html.DisplayFor(model => model.Height) cm</li>
-    </ul>
+  <ul id="profile_list">
+    <li>Birthdate: @Html.DisplayFor(model => model.DOB)</li>
+    <li>Nationality: @Html.DisplayFor(model => model.Nationality)</li>
+    <li>Weight: @Html.DisplayFor(model => model.Weight) kg</li>
+    <li>Height: @Html.DisplayFor(model => model.Height) cm</li>
+  </ul>
 </div>
 
 <div id="profile_buttons">
-<a href="#">
-<button type="button" class="button" id="projects_button">Projects</button>
-</a>
-<button type="button" class="button" id="id_button" data-toggle="modal" data-target="#idCard">ID Card</button>
-<a href="/../Manage/Index">
-<button type="button" class="button" id="edit_button">Edit Profile</button>
-</a>
+  <a href="#" class="btn" id="projects_button">Projects</a>
+  <button type="button" class="btn" id="id_button" data-toggle="modal" data-target="#idCard">ID Card</button>
+  <a href="/../Manage/Index" class="btn" id="edit_button">Edit Profile</a>
 </div>
 
 <!-- Modal -->

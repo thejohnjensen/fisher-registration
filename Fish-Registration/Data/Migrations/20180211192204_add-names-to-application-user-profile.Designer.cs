@@ -11,15 +11,15 @@ using System;
 namespace Fish_Registration.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180211045034_names2")]
-    partial class names2
+    [Migration("20180211192204_add-names-to-application-user-profile")]
+    partial class addnamestoapplicationuserprofile
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
-                .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
+                .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Fish_Registration.Models.ApplicationUser", b =>
                 {
@@ -78,7 +78,8 @@ namespace Fish_Registration.Data.Migrations
 
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
-                        .HasName("UserNameIndex");
+                        .HasName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -101,7 +102,8 @@ namespace Fish_Registration.Data.Migrations
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
-                        .HasName("RoleNameIndex");
+                        .HasName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
                 });

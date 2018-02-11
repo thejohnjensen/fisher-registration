@@ -8,8 +8,10 @@ namespace Fish_Registration.Models.ManageViewModels
 {
     public class ProfileIndexViewModel
     {
+        [Display(Name = "First Name")]
         public string FirstName {get; set; }
 
+        [Display(Name = "Last Name")]
         public string LastName {get; set;}
 
         [Required]
@@ -21,6 +23,7 @@ namespace Fish_Registration.Models.ManageViewModels
         public string PhoneNumber { get; set; }
 
         public string Nationality { get;set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DOB { get;set; }
         public int Height { get; set; }
         public int Weight { get; set; }

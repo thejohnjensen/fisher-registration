@@ -17,71 +17,55 @@
     background-repeat: no-repeat;
     opacity: 0.5; }
 
-#idCard.modal .modal-dialog .modal-content .modal-footer {
-  border-top: none;
-  background-color: #1E1D2F; }
-
 body {
   padding-top: 50px;
   padding-bottom: 20px;
   /* Wrapping element */
   /* Set some basic padding to keep content from hitting the edges */
   /* QR code generator */ }
+  body .navbar {
+    background-color: #1E1D2F; }
   body .body-content {
     padding-left: 15px;
     padding-right: 15px; }
+    body .body-content #div_profile_image {
+      text-align: center;
+      margin-top: 20px; }
+    body .body-content #profile_image {
+      border-radius: 100%; }
+    body .body-content #profile_name {
+      text-align: center;
+      font-size: 42px; }
+    body .body-content #list_container {
+      text-align: center; }
+    body .body-content #profile_list {
+      width: 24em;
+      margin: auto;
+      text-align: left; }
+    body .body-content #profile_list li {
+      list-style-type: none;
+      font-size: 24px; }
+    body .body-content #profile_buttons {
+      text-align: center; }
+      body .body-content #profile_buttons .btn {
+        display: block;
+        margin: 10px auto;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 27px;
+        width: 10em;
+        border-radius: 5px; }
+      body .body-content #profile_buttons #projects_button {
+        background-color: #04AFE8; }
+      body .body-content #profile_buttons #id_button {
+        background-color: #2C52A3; }
+      body .body-content #profile_buttons #edit_button {
+        background-color: #727272; }
   body #qrCode {
     margin: 15px; }
-
-#div_profile_image {
-  text-align: center;
-  margin-top: 20px; }
-
-#profile_image {
-  border-radius: 100%; }
-
-#profile_name {
-  text-align: center;
-  font-family: 'AvenirNextCondensed-Regular', Courier, monospace;
-  font-size: 42px; }
-
-#list_container {
-  text-align: center; }
-
-#profile_list {
-  width: 24em;
-  margin: auto;
-  text-align: left; }
-
-#profile_list li {
-  list-style-type: none;
-  font-family: 'AvenirNextCondensed-Regular', Courier, monospace;
-  font-size: 24px; }
-
-#profile_buttons button {
-  display: block;
-  font-family: 'AvenirNextCondensed-Regular', Courier, monospace;
-  margin: 10px auto;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 27px;
-  width: 10em;
-  border-radius: 5px; }
-
-#profile_buttons {
-  text-align: center; }
-
-#projects_button {
-  background-color: #04AFE8; }
-
-#id_button {
-  background-color: #2C52A3; }
-
-#edit_button {
-  background-color: #727272; }
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 640px) {
