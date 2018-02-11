@@ -20,7 +20,7 @@
 
 <div id="profile_buttons">
   <a href="#" class="btn" id="projects_button">Projects</a>
-  <button type="button" class="btn" id="id_button" data-toggle="modal" data-target="#idCard">ID Card</button>
+  <a href="#" class="btn" id="id_button" data-toggle="modal" data-target="#idCard">ID Card</a>
   <a href="/../Manage/Index" class="btn" id="edit_button">Edit Profile</a>
 </div>
 
@@ -34,12 +34,14 @@
       </div>
       <div class="modal-body">
         <div class="background-watermark"></div>
-        <img src="https://via.placeholder.com/200x200" class="img-circle"/>
+        <div class="id-card-photo-container">
+          <img src="https://via.placeholder.com/200x200" class="img-circle"/>
+          <div class="id-card-aside">
+            <h1>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
+            <h2>@Html.DisplayFor(model => model.Nationality)</h2>
+          </div>
+        </div>
         <dl>
-            <dt>Name</dt>
-            <dd>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</dd>
-            <dt>Nationality</dt>
-            <dd>@Html.DisplayFor(model => model.Nationality)</dd>
             <dt>Date Of Birth</dt>
             <dd>@Html.DisplayFor(model => model.DOB)</dd>
             <dt>Height (in cms)</dt>

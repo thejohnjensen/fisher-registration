@@ -16,8 +16,19 @@
     background: url(/images/offshore-logo.png);
     background-repeat: no-repeat;
     opacity: 0.5; }
+  #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch; }
+    #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container .id-card-aside {
+      padding: 20px;
+      margin-left: 12%; }
+  #idCard.modal .modal-dialog .modal-content .modal-body dl {
+    margin: 40px;
+    font-size: 20px; }
 
 body {
+  font-family: 'Barlow Condensed', sans-serif;
   padding-top: 50px;
   padding-bottom: 20px;
   /* Wrapping element */
@@ -25,13 +36,15 @@ body {
   /* QR code generator */ }
   body .navbar {
     background-color: #1E1D2F; }
-    body .navbar .container .navbar-header .navbar-brand .logo {
-      display: inline-block;
-      height: 50px;
-      width: 50px;
-      position: relative;
-      right: 5px;
-      margin-top: -13px; }
+    body .navbar .container {
+      font-size: 18px; }
+      body .navbar .container .navbar-header .navbar-brand .logo {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        position: relative;
+        margin-top: -27px;
+        top: 10px; }
   body .body-content {
     padding-left: 15px;
     padding-right: 15px; }
@@ -42,7 +55,8 @@ body {
       text-align: center;
       font-size: 42px; }
     body .body-content #list_container {
-      text-align: center; }
+      text-align: center;
+      margin: 20px 0; }
     body .body-content #profile_list {
       width: 24em;
       margin: auto;
@@ -57,10 +71,9 @@ body {
         margin: 10px auto;
         border: none;
         color: white;
-        padding: 15px 32px;
         text-align: center;
         text-decoration: none;
-        font-size: 27px;
+        font-size: 20px;
         width: 10em;
         border-radius: 5px; }
       body .body-content #profile_buttons #projects_button {

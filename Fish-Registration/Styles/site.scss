@@ -2,6 +2,7 @@
 
 $padding: 15px;
 body {
+  font-family: 'Barlow Condensed', sans-serif;
   padding-top: 50px;
   padding-bottom: $padding + 5;
 
@@ -9,6 +10,8 @@ body {
     background-color: #1E1D2F;
 
     .container {
+      font-size: 18px;
+
       .navbar-header {
         .navbar-brand {
           .logo {
@@ -41,6 +44,7 @@ body {
     
     #list_container {
       text-align: center;
+      margin: 20px 0;
     }
     
     #profile_list {
@@ -62,10 +66,9 @@ body {
         margin: 10px auto;
         border: none;
         color: white;
-        padding: 15px 32px;
         text-align: center;
         text-decoration: none;
-        font-size: 27px;
+        font-size: 20px;
         width: 10em;
         border-radius: 5px;
       }
