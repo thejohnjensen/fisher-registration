@@ -45,13 +45,11 @@ body {
   text-align: center;
   text-decoration: none;
   font-size: 27px;
-  width: 10em; 
-  border-radius: 5px;
-}
+  width: 10em;
+  border-radius: 5px; }
 
 #profile_buttons {
-  text-align: center; 
-}
+  text-align: center; }
 
 #projects_button {
   background-color: #04AFE8; }
