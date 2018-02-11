@@ -15,11 +15,13 @@ namespace Fish_Registration.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _UserManager;
+       
 
         public ProjectsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _UserManager = userManager;
+          
         }
 
         // GET: Projects
@@ -51,6 +53,8 @@ namespace Fish_Registration.Controllers
         // GET: Projects/Create
         public IActionResult Create()
         {
+            
+
             ViewData["CaptainVesselId"] = new SelectList(_context.Set<CaptainVessel>(), "CaptainVesselId", "CaptainVesselId");
             return View();
         }
