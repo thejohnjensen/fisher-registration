@@ -14,5 +14,10 @@ namespace Fish_Registration.Models
 
         public string Dob {get; set;}
 
+        private enum ShipType
+        {
+            Tanker, Cargo, Fishing, Coaster, Passenger
+        }
+
     }
 }

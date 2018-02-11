@@ -13,5 +13,10 @@ namespace Fish_Registration.Models
         public string CompanyOwner { get; set; }
         public float GrossWeight { get; set; }
 
-	}
+        private enum ShipType
+        {
+            Tanker, Cargo, Fishing, Coaster, Passenger
+        }
+
+    }
 }
