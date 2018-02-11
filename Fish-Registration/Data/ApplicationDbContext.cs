@@ -28,5 +28,7 @@ namespace Fish_Registration.Data
         public DbSet<Fish_Registration.Models.Vessel> Vessel { get; set; }
 
         public DbSet<Fish_Registration.Models.Project> Project { get; set; }
+
+        public DbSet<Fish_Registration.Models.CaptainVessel> CaptainVessel { get; set; }
     }
 }

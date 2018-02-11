@@ -11,5 +11,7 @@ namespace Fish_Registration.Models
        public int CaptainId { get; set; }
        public string FirstName { get; set;}
        public string LastName { get; set;}
+       public List<CaptainVessel> CaptainVessel { get; set; }
+       public List<Vessel> Vessel { get; set; }
     }
 }

@@ -14,6 +14,7 @@ namespace Fish_Registration.Models
         public string CompanyOwner { get; set; }
         public float GrossWeight { get; set; }
 
+        public List<CaptainVessel> CapatainVessel { get; set; }
         
 
     }

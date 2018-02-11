@@ -16,9 +16,6 @@
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.UserId)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.Start)
                 </th>
                 <th>
@@ -37,16 +34,13 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Start)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.End)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GetCaptainVessel.CaptainVesselId)
+                @Html.DisplayFor(modelItem => item.GetCaptainVessel.Vessel.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
