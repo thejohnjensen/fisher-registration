@@ -44,3 +44,21 @@ $modal-bg: #1E1D2F;
     }
   }
 }
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 640px) {
+  #idCard.modal {
+    .modal-dialog {
+      .modal-content {
+        .modal-body {
+          .id-card-photo-container {
+            .id-card-aside {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
