@@ -23,7 +23,7 @@ namespace Fish_Registration.Data.Migrations
             migrationBuilder.AddColumn<DateTime>(
                 name: "DOB",
                 table: "AspNetUsers",
-                type: "datetime2",
+                type: "date",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
@@ -37,7 +37,7 @@ namespace Fish_Registration.Data.Migrations
             migrationBuilder.AddColumn<string>(
                 name: "Nationality",
                 table: "AspNetUsers",
-                type: "nvarchar(max)",
+                type: "text",
                 nullable: true);
 
             migrationBuilder.AddColumn<int>(

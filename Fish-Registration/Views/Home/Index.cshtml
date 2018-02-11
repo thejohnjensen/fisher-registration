@@ -1,15 +1,19 @@
-﻿@{
+﻿@model Fish_Registration.Models.ManageViewModels.ProfileIndexViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<img src="http://via.placeholder.com/150x150" />
-<h1>First Last</h1>
+<div id="div_profile_image">
+<img id="profile_image" src="http://via.placeholder.com/150x150" />
+</div>
+
+<h1 id="profile_name">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
 
 <ul>
-    <li>Birthdate</li>
-    <li>Nationality</li>
-    <li>Weight</li>
-    <li>Height</li>
+    <li>Birthdate: @Html.DisplayFor(model => model.DOB)</li>
+    <li>Nationality: @Html.DisplayFor(model => model.Nationality)</li>
+    <li>Weight: @Html.DisplayFor(model => model.Weight)</li>
+    <li>Height: @Html.DisplayFor(model => model.Height)</li>
 </ul>
 
 <button type="button">Projects</button>

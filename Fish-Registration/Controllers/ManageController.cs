@@ -58,6 +58,8 @@ namespace Fish_Registration.Controllers
             {
                 Username = user.UserName,
                 Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,
                 Nationality = user.Nationality,

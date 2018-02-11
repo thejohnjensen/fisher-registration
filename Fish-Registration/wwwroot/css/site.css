@@ -10,6 +10,16 @@ body {
   body #qrCode {
     margin: 15px; }
 
+#div_profile_image {
+  text-align: center;
+  margin-top: 20px; }
+
+#profile_image {
+  border-radius: 100%; }
+
+#profile_name {
+  text-align: center; }
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
   /* Hide captions */
