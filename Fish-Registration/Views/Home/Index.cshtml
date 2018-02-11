@@ -1,3 +1,57 @@
-﻿@{
+﻿@model Fish_Registration.Models.ManageViewModels.ProfileIndexViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
+
+<div id="div_profile_image">
+<img id="profile_image" src="http://via.placeholder.com/150x150" />
+</div>
+
+<h1 id="profile_name">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
+
+<div id="list_container">
+    <ul id="profile_list">
+        <li>Birthdate: @Html.DisplayFor(model => model.DOB)</li>
+        <li>Nationality: @Html.DisplayFor(model => model.Nationality)</li>
+        <li>Weight: @Html.DisplayFor(model => model.Weight) kg</li>
+        <li>Height: @Html.DisplayFor(model => model.Height) cm</li>
+    </ul>
+</div>
+
+<div id="profile_buttons">
+<a href="#">
+<button type="button" class="button" id="projects_button">Projects</button>
+</a>
+<button type="button" class="button" id="id_button" data-toggle="modal" data-target="#idCard">ID Card</button>
+<a href="/../Manage/Index">
+<button type="button" class="button" id="edit_button">Edit Profile</button>
+</a>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="idCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Your ID Card</h4>
+      </div>
+      <div class="modal-body">
+        <div class="background-watermark"></div>
+        <img src="https://via.placeholder.com/200x200"/>
+        <dl>
+            <dt>Name</dt>
+            <dd>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</dd>
+            <dt>Nationality</dt>
+            <dd>@Html.DisplayFor(model => model.Nationality)</dd>
+            <dt>Date Of Birth</dt>
+            <dd>@Html.DisplayFor(model => model.DOB)</dd>
+            <dt>Height (in cms)</dt>
+            <dd>@Html.DisplayFor(model => model.Height)</dd>
+            <dt>Weight (in kgs)</dt>
+            <dd>@Html.DisplayFor(model => model.Weight)</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>

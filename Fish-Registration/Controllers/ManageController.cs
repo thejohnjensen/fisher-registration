@@ -58,6 +58,8 @@ namespace Fish_Registration.Controllers
             {
                 Username = user.UserName,
                 Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,
                 Nationality = user.Nationality,
@@ -133,6 +135,8 @@ namespace Fish_Registration.Controllers
             user.DOB = model.DOB;
             user.Weight = model.Weight;
             user.Height = model.Height;
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
             
             var updateUserResult = await _userManager.UpdateAsync(user);
             if (!updateUserResult.Succeeded)
