@@ -72,6 +72,30 @@ namespace Fish_Registration.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> IdCard()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            var model = new IndexViewModel
+            {
+                Username = user.UserName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                IsEmailConfirmed = user.EmailConfirmed,
+                Nationality = user.Nationality,
+                DOB = user.DOB,
+                Height = user.Height,
+                Weight = user.Weight,
+                StatusMessage = StatusMessage
+            };
+            return View(model); 
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(IndexViewModel model)
@@ -106,15 +130,18 @@ namespace Fish_Registration.Controllers
                     throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
                 }
             }
-            var nationality = user.Nationality;
-            if (model.Nationality != nationality) 
+
+            user.Nationality = model.Nationality;
+            user.DOB = model.DOB;
+            user.Weight = model.Weight;
+            user.Height = model.Height;
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            
+            var updateUserResult = await _userManager.UpdateAsync(user);
+            if (!updateUserResult.Succeeded)
             {
-                user.Nationality = model.Nationality;
-                var setNationalityResult = await _userManager.UpdateAsync(user);
-                if (!setNationalityResult.Succeeded)
-                {
-                    throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
-                }
+                throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
             }
 
             StatusMessage = "Your profile has been updated";
