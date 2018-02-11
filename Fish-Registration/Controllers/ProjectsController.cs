@@ -27,7 +27,7 @@ namespace Fish_Registration.Controllers
         // GET: Projects
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Project.Include(p => p.GetCaptainVessel);
+            var applicationDbContext = _context.Project.Include(p => p.GetCaptainVessel).Include(p => p.GetCaptainVessel.Vessel);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -53,9 +53,12 @@ namespace Fish_Registration.Controllers
         // GET: Projects/Create
         public IActionResult Create()
         {
-            
+            IQueryable<Vessel> vesselQuery = from v in _context.Vessel select v;
 
-            ViewData["CaptainVesselId"] = new SelectList(_context.Set<CaptainVessel>(), "CaptainVesselId", "CaptainVesselId");
+            //ViewData["CaptainVesselId"] = new SelectList(vessal, "CaptainVesselId", "Name");
+            var captainVessel = _context.CaptainVessel.ToList();
+            captainVessel.ForEach(cv => cv.Vessel = vesselQuery.First(v => v.VesselId == cv.VesselID));
+            ViewData["CaptainVesselId"] = new SelectList(captainVessel, "CaptainVesselId", "Vessel.Name");
             return View();
         }
 

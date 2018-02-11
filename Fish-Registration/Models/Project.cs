@@ -13,6 +13,7 @@ namespace Fish_Registration.Models
 
         public string Name { get; set; }
         public int CaptainVesselId { get; set; }
+        [Display(Name="Vessel")]
         public virtual CaptainVessel GetCaptainVessel { get; set; }
 
         public string UserId { get; set; }
