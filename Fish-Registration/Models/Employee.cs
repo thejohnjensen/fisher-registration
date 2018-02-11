@@ -12,7 +12,7 @@ namespace Fish_Registration.Models
         public string FirstName {get; set;}
         public string LastName {get; set;}
 
-        public string Dob {get; set;}
+        public DateTime Dob {get; set;}
 
         private enum ShipType
         {

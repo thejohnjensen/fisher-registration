@@ -7,7 +7,7 @@ namespace Fish_Registration.Models
 {
 	public class Vessel
 	{
-        public int VesselID { get; set; }
+        public int ID { get; set; }
 
         public string Name { get; set; }
         public string CompanyOwner { get; set; }
