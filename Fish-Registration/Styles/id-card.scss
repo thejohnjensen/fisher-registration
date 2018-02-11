@@ -1,0 +1,23 @@
+#idCard.modal {
+  .modal-dialog {
+    .modal-content {
+
+      .modal-body {
+        vertical-align: top;
+        background-color: #1E1D2F;
+        color: #fff;
+
+        .background-watermark {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 170px;
+          height: 190px;
+          background: url(/images/offshore-logo.png);
+          background-repeat: no-repeat;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
