@@ -30,8 +30,8 @@ body {
       height: 50px;
       width: 50px;
       position: relative;
-      right: 5px;
-      margin-top: -13px; }
+      margin-top: -27px;
+      top: 10px; }
   body .body-content {
     padding-left: 15px;
     padding-right: 15px; }
