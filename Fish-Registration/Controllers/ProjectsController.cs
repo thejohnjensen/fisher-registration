@@ -48,6 +48,10 @@ namespace Fish_Registration.Controllers
                 return NotFound();
             }
 
+            IQueryable<Vessel> vesselQuery = from v in _context.Vessel select v;
+            var captainVessel = _context.CaptainVessel.ToList();
+            captainVessel.ForEach(cv => cv.Vessel = vesselQuery.First(v => v.VesselId == cv.VesselID));
+            ViewData["CaptainVesselId"] = new SelectList(captainVessel, "CaptainVesselId", "Vessel.Name", project.CaptainVesselId);
             return View(project);
         }
 

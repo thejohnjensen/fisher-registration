@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Fish_Registration.Models.Project>
+
+<div class="public-user-id-wrapper">
+    <p>
+        <a class="btn-default" asp-controller="Projects" asp-action="Create">Create new</a>
+    </p>
+@foreach(var item in Model){ 
+    
+    <h3><a asp-action="Details" asp-route-id="@item.ProjectId">@Html.DisplayFor(modelItem => item.Name)</a></h3>
+    <div class="captain-details">Captain: Ben Cole</div>
+    <div class="project-details-container">
+        <div class="project-start-container">
+            <div>
+                Departure Date
+            </div>
+            <div>
+                @Html.DisplayFor(modelItem => item.Start)
+            </div>
+        </div>
+        <div class="project-details-divider">to</div>
+        <div class="project-end-container">
+            <div>
+                Return Date
+            </div>
+            <div>
+                @Html.DisplayFor(modelItem => item.End)
+            </div>
+        </div>
+    </div>
+
+    <hr />
+}
+</div>
