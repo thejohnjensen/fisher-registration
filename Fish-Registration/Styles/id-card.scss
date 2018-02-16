@@ -2,27 +2,39 @@ $modal-bg: #1E1D2F;
 
 #idCard.modal {
   .modal-dialog {
+    width: 400px;
+
     .modal-content {
+
       .modal-header {
         border-bottom: none;
         background-color: #2C52A3;
         color: #fff;
+
+        button.close {
+          color: #fff;
+        }
+
+        .modal-title {
+          font-size: 25px;
+        }
       }
 
       .modal-body {
+        height: 520px;
         vertical-align: top;
         background-color: $modal-bg;
         color: #fff;
 
         .background-watermark {
           position: fixed;
-          bottom: 80px;
-          right: 20px;
+          bottom: 20px;
+          left: 20px;
           width: 170px;
           height: 190px;
           background: url(/images/offshore-logo.png);
           background-repeat: no-repeat;
-          opacity: 0.5;
+          opacity: 0.2;
         }
 
         .id-card-photo-container {
@@ -31,14 +43,28 @@ $modal-bg: #1E1D2F;
           align-items: stretch;
           
           .id-card-aside {
-            padding: 20px;
             margin-left: 12%;
+          }
+
+          dl {
+            font-size: 20px;
+
+            dd {
+              margin: 0 0 15px 0;
+            }
           }
         }
 
-        dl {
-          margin: 40px;
-          font-size: 20px;
+        .bottom-wrapper {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+
+          .qr-code {
+            position: relative;
+            top: 70px;
+            right: 10px;
+          }
         }
       }
     }

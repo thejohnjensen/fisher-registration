@@ -1,31 +1,45 @@
-#idCard.modal .modal-dialog .modal-content .modal-header {
-  border-bottom: none;
-  background-color: #2C52A3;
-  color: #fff; }
-
-#idCard.modal .modal-dialog .modal-content .modal-body {
-  vertical-align: top;
-  background-color: #1E1D2F;
-  color: #fff; }
-  #idCard.modal .modal-dialog .modal-content .modal-body .background-watermark {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 170px;
-    height: 190px;
-    background: url(/images/offshore-logo.png);
-    background-repeat: no-repeat;
-    opacity: 0.5; }
-  #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: stretch; }
-    #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container .id-card-aside {
-      padding: 20px;
-      margin-left: 12%; }
-  #idCard.modal .modal-dialog .modal-content .modal-body dl {
-    margin: 40px;
-    font-size: 20px; }
+#idCard.modal .modal-dialog {
+  width: 400px; }
+  #idCard.modal .modal-dialog .modal-content .modal-header {
+    border-bottom: none;
+    background-color: #2C52A3;
+    color: #fff; }
+    #idCard.modal .modal-dialog .modal-content .modal-header button.close {
+      color: #fff; }
+    #idCard.modal .modal-dialog .modal-content .modal-header .modal-title {
+      font-size: 25px; }
+  #idCard.modal .modal-dialog .modal-content .modal-body {
+    height: 520px;
+    vertical-align: top;
+    background-color: #1E1D2F;
+    color: #fff; }
+    #idCard.modal .modal-dialog .modal-content .modal-body .background-watermark {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 170px;
+      height: 190px;
+      background: url(/images/offshore-logo.png);
+      background-repeat: no-repeat;
+      opacity: 0.2; }
+    #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: stretch; }
+      #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container .id-card-aside {
+        margin-left: 12%; }
+      #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container dl {
+        font-size: 20px; }
+        #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container dl dd {
+          margin: 0 0 15px 0; }
+    #idCard.modal .modal-dialog .modal-content .modal-body .bottom-wrapper {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between; }
+      #idCard.modal .modal-dialog .modal-content .modal-body .bottom-wrapper .qr-code {
+        position: relative;
+        top: 70px;
+        right: 10px; }
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 640px) {
