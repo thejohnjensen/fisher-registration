@@ -3,14 +3,14 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="div_profile_image">
-<img id="profile_image" src="/images/popeye-face.png" style="width: 150px; height: 150px" class="img-circle"/>
+<div class="div_profile_image">
+<img class="profile_image" src="/images/popeye-face.png" style="width: 150px; height: 150px" class="img-circle"/>
 </div>
 
-<h1 id="profile_name">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
+<h1 class="profile_name">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
 
-<div id="list_container">
-  <ul id="profile_list">
+<div class="list_container">
+  <ul class="profile_list">
     <li>Birthdate: @Html.DisplayFor(model => model.DOB)</li>
     <li>Nationality: @Html.DisplayFor(model => model.Nationality)</li>
     <li>Weight: @Html.DisplayFor(model => model.Weight) kg</li>
@@ -19,9 +19,9 @@
 </div>
 
 <div class="button_container">
-  <a href="/Projects" class="btn" id="projects_button">Projects</a>
-  <a href="#" class="btn" id="id_button" data-toggle="modal" data-target="#idCard">ID Card</a>
-  <a href="/../Manage/Index" class="btn" id="edit_button">Edit Profile</a>
+  <a href="/Projects" class="btn projects_button">Projects</a>
+  <a href="#" class="btn id_button" data-toggle="modal" data-target="#idCard">ID Card</a>
+  <a href="/../Manage/Index" class="btn edit_button">Edit Profile</a>
 </div>
 
 <!-- Modal -->

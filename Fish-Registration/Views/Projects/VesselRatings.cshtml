@@ -3,49 +3,98 @@
 @{
     ViewData["Title"] = "VesselRatings";
 }
-<h1>Vessel Ratings</h1>
-<h1>Arctic Ram</h1>
-<h2>Current Captain: Elvis Felson</h2>
-<h2>Previous Captain: John Galt</h2>
-<ul>
-  <li>Flag History: </li>
-  <li><img src="http://via.placeholder.com/100x100" /></li>
-  <li><img src="http://via.placeholder.com/100x100" /></li>
-</ul>
 
-<ul>
-    <li>PAYROLL INTEGRITY</li>
-    <li>(3 workers)</li>
-    <li>
-        <div class="stars stars-example-fontawesome">
-                <select id="example-fontawesome" name="rating" autocomplete="off">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4" selected="4">4</option>
-                  <option value="5">5</option>
-                </select>
-        </div>
-    </li>
-    
-    <li>WORK ENVIRONMENT</li>
-    <li>(7 workers)</li>
-    <li>
-        <div class="stars stars-example-fontawesome">
-                <select id="example-fontawesome2" name="rating" autocomplete="off">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3" selected="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-        </div>
-    </li>
-</ul>
+<section class="rate_vessel_top">
+  <h1>Vessel Ratings</h1>
+  <h2>Arctic Ram</h2>
+  <h3>Current Captain: Elvis Felson</h3>
+  <h3>Previous Captain: John Galt</h3>
+</section>
 
-<p>Comments:</p>
-<ul>
-  <li>Lorem ipsum dolor amet shoreditch cardigan forage microdosing, typewriter readymade before they sold out beard single-origin coffee. Kombucha typewriter bicycle rights roof party leggings ugh polaroid XOXO gentrify cronut chillwave swag farm-to-table tousled.</li>
-  <li>DIY skateboard etsy deep v ennui semiotics, aesthetic dreamcatcher tumblr cliche palo santo listicle.</li>
-  <li>Master cleanse paleo taxidermy PBR literally celiac asymmetrical ennui wayfarers synth hoodie 90's scenester tbh tilde. Before they sold out tousled echo park, ugh crucifix brooklyn brunch.</li>
-</ul>
+<div class="div_profile_image">
+    <p>Flag History: </p>
+    <div class="flag_group">
+      <img src="~/images/japanese-flag-small.jpg" style="border: solid 1px;"/>
+      <p>(Current)</p>
+    </div>
+    <div class="flag_group">
+      <img src="~/images/thai-flag-small.jpg" />
+      <p>(1996 - 2003)</p>
+    </div>
+</div>
+
+<div class="list_container">
+  <ul class="rate_vessel_options">
+      <li>PAYROLL INTEGRITY</li>
+      <li class="worker_tag">(3 workers)</li>
+      <li>
+          <div class="stars stars-example-fontawesome">
+                  <select id="example-fontawesome" name="rating" autocomplete="off">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4" selected="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+          </div>
+      </li>
+      
+      <li>WORK ENVIRONMENT</li>
+      <li class="worker_tag">(7 workers)</li>
+      <li>
+          <div class="stars stars-example-fontawesome">
+                  <select id="example-fontawesome2" name="rating" autocomplete="off">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+          </div>
+      </li>
+  </ul>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<h3>User Comment Example</h3>
+</div><!-- /col-sm-12 -->
+</div><!-- /row -->
+<div class="row">
+<div class="col-sm-1">
+<div class="thumbnail">
+<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+</div><!-- /thumbnail -->
+</div><!-- /col-sm-1 -->
+
+<div class="col-sm-5">
+<div class="panel panel-default">
+<div class="panel-heading">
+<strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+</div>
+<div class="panel-body">
+Panel content
+</div><!-- /panel-body -->
+</div><!-- /panel panel-default -->
+</div><!-- /col-sm-5 -->
+
+<div class="col-sm-1">
+<div class="thumbnail">
+<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+</div><!-- /thumbnail -->
+</div><!-- /col-sm-1 -->
+
+<div class="col-sm-5">
+<div class="panel panel-default">
+<div class="panel-heading">
+<strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+</div>
+<div class="panel-body">
+Panel content
+</div><!-- /panel-body -->
+</div><!-- /panel panel-default -->
+</div><!-- /col-sm-5 -->
+</div><!-- /row -->
+
+</div><!-- /container -->
