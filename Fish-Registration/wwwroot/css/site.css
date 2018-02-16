@@ -1,5 +1,5 @@
 #idCard.modal .modal-dialog {
-  width: 400px; }
+  width: 355px; }
   #idCard.modal .modal-dialog .modal-content .modal-header {
     border-bottom: none;
     background-color: #2C52A3;
@@ -27,7 +27,7 @@
       flex-flow: row wrap;
       align-items: stretch; }
       #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container .id-card-aside {
-        margin-left: 12%; }
+        margin-left: 10%; }
       #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container dl {
         font-size: 20px; }
         #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container dl dd {
@@ -35,11 +35,8 @@
     #idCard.modal .modal-dialog .modal-content .modal-body .bottom-wrapper {
       display: flex;
       flex-flow: row nowrap;
-      justify-content: space-between; }
-      #idCard.modal .modal-dialog .modal-content .modal-body .bottom-wrapper .qr-code {
-        position: relative;
-        top: 70px;
-        right: 10px; }
+      justify-content: flex-end;
+      margin: 40px 0; }
 
 .public-user-id-wrapper {
   margin: 2% 0 0 0; }
@@ -64,11 +61,6 @@
     font-size: 20px; }
     .public-user-id-wrapper .project-details-container .project-details-divider {
       margin: 0 50px; }
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 640px) {
-  #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container .id-card-aside {
-    margin-left: 0; } }
 
 body {
   font-family: 'Barlow Condensed', sans-serif;

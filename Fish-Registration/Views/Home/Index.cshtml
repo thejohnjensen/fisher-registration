@@ -35,7 +35,12 @@
       <div class="modal-body">
         <div class="background-watermark"></div>
         <div class="id-card-photo-container">
-          <img src="/images/popeye-face.png" style="width: 150px; height: 150px" class="img-circle"/>
+          <div class="persona-container">
+            <img src="/images/popeye-face.png" style="width: 150px; height: 150px" class="img-circle" />
+            <div class="name-container">
+              <h1>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
+            </div>
+          </div>
           <div class="id-card-aside">
             <dl>
               <dt>Date Of Birth</dt>
@@ -50,10 +55,7 @@
           </div>
         </div>
         <div class="bottom-wrapper">
-          <div class="name-container">
-            <h1>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
-          </div>
-          <img class="qr-code" src="/images/qrcode.png" align="right"/>
+          <img class="qr-code" src="/images/qrcode.png"/>
         </div>
       </div>
     </div>
