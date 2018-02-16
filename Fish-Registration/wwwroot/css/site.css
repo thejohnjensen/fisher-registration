@@ -69,9 +69,9 @@ body {
     body .body-content #profile_list li {
       list-style-type: none;
       font-size: 24px; }
-    body .body-content #profile_buttons {
+    body .body-content .button_container {
       text-align: center; }
-      body .body-content #profile_buttons .btn {
+      body .body-content .button_container .btn {
         display: block;
         margin: 10px auto;
         border: none;
@@ -81,11 +81,11 @@ body {
         font-size: 20px;
         width: 10em;
         border-radius: 5px; }
-      body .body-content #profile_buttons #projects_button {
+      body .body-content .button_container #projects_button {
         background-color: #04AFE8; }
-      body .body-content #profile_buttons #id_button {
+      body .body-content .button_container #id_button {
         background-color: #2C52A3; }
-      body .body-content #profile_buttons #edit_button {
+      body .body-content .button_container #edit_button {
         background-color: #727272; }
   body #qrCode {
     margin: 15px; }

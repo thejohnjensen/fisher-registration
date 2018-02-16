@@ -1,0 +1,44 @@
+@model IEnumerable<Fish_Registration.Models.Project>
+
+@{
+    ViewData["Title"] = "VesselRatings";
+}
+<h1>Rate Vessel</h1>
+<h1>Arctic Ram</h1>
+<h2>Current Captain: Elvis Felson</h2>
+<img src="http://via.placeholder.com/150x150" />
+
+<p>Select a rating for each category.</p>
+
+<ul>
+    <li>PAYROLL INTEGRITY</li>
+    <li>
+        <div class="stars stars-example-fontawesome">
+                <select id="example-fontawesome" name="rating" autocomplete="off">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+        </div>
+    </li>
+    
+    <li>WORK ENVIRONMENT</li>
+    <li>
+        <div class="stars stars-example-fontawesome">
+                <select id="example-fontawesome2" name="rating" autocomplete="off">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+        </div>
+    </li>
+</ul>
+
+
+<div class="button_container">
+<a href="#" class="btn" id="projects_button">Submit</a>
+</div>

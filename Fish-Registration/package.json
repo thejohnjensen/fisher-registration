@@ -3,8 +3,11 @@
   "name": "asp.net",
   "private": true,
   "devDependencies": {
-    "gulp": "3.9.1",
+    "gulp": "^3.9.1",
     "gulp-less": "3.3.0",
     "gulp-sass": "3.1.0"
+  },
+  "dependencies": {
+    "jquery-bar-rating": "^1.2.2"
   }
 }

@@ -9,6 +9,7 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -16,6 +17,10 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </environment>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.1/themes/fontawesome-stars.min.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.1/themes/fontawesome-stars.min.css">  
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -39,6 +44,8 @@
                     <li><a asp-area="" asp-controller="Projects" asp-action="Index">Projects</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Projects" asp-action="RateVessel">Rate Vessel</a></li>
+                    <li><a asp-area="" asp-controller="Projects" asp-action="VesselRating">Check Vessel Ratings</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
@@ -73,6 +80,20 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
+    <!-- Start review stars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.1/jquery.barrating.min.js"></script>
+    <script type="text/javascript">
+       $(function() {
+          $('#example-fontawesome').barrating({
+            theme: 'fontawesome-stars'
+          });
+          $('#example-fontawesome2').barrating({
+            theme: 'fontawesome-stars'
+          });
+       });
+    </script>
+    <!-- End review stars -->
     @RenderSection("Scripts", required: false)
 </body>
 </html>
