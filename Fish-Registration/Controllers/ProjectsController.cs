@@ -180,7 +180,7 @@ namespace Fish_Registration.Controllers
             return View();
         }
 
-        / For the rate vessel page
+        // For the rate vessel page
          public IActionResult VesselRatings()
         {
             return View();
