@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Fish_Registration.Data;
 using Fish_Registration.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Fish_Registration.Controllers
 {

@@ -84,19 +84,27 @@
       </div>
       <div class="modal-body">
         <div class="background-watermark"></div>
-        <img src="https://via.placeholder.com/200x200"/>
-        <dl>
-            <dt>Name</dt>
-            <dd>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</dd>
-            <dt>Nationality</dt>
-            <dd>@Html.DisplayFor(model => model.Nationality)</dd>
-            <dt>Date Of Birth</dt>
-            <dd>@Html.DisplayFor(model => model.DOB)</dd>
-            <dt>Height (in cms)</dt>
-            <dd>@Html.DisplayFor(model => model.Height)</dd>
-            <dt>Weight (in kgs)</dt>
-            <dd>@Html.DisplayFor(model => model.Weight)</dd>
-        </dl>
+        <div class="id-card-photo-container">
+          <img src="/images/popeye-face.png" style="width: 150px; height: 150px" class="img-circle"/>
+          <div class="id-card-aside">
+            <dl>
+              <dt>Date Of Birth</dt>
+              <dd>@Html.DisplayFor(model => model.DOB)</dd>
+              <dt>Nationality</dt>
+              <dd>@Html.DisplayFor(model => model.Nationality)</dd>
+              <dt>Height (in cms)</dt>
+              <dd>@Html.DisplayFor(model => model.Height)</dd>
+              <dt>Weight (in kgs)</dt>
+              <dd>@Html.DisplayFor(model => model.Weight)</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="bottom-wrapper">
+          <div class="name-container">
+            <h1>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
+          </div>
+          <img class="qr-code" src="/images/qrcode.png" align="right"/>
+        </div>
       </div>
     </div>
   </div>
