@@ -35,20 +35,28 @@
       <div class="modal-body">
         <div class="background-watermark"></div>
         <div class="id-card-photo-container">
-          <img src="/images/popeye-face.png" style="width: 150px; height: 150px" class="img-circle"/>
+          <div class="persona-container">
+            <img src="/images/popeye-face.png" style="width: 150px; height: 150px" class="img-circle" />
+            <div class="name-container">
+              <h1>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
+            </div>
+          </div>
           <div class="id-card-aside">
-            <h1>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
-            <h2>@Html.DisplayFor(model => model.Nationality)</h2>
+            <dl>
+              <dt>Date Of Birth</dt>
+              <dd>@Html.DisplayFor(model => model.DOB)</dd>
+              <dt>Nationality</dt>
+              <dd>@Html.DisplayFor(model => model.Nationality)</dd>
+              <dt>Height (in cms)</dt>
+              <dd>@Html.DisplayFor(model => model.Height)</dd>
+              <dt>Weight (in kgs)</dt>
+              <dd>@Html.DisplayFor(model => model.Weight)</dd>
+            </dl>
           </div>
         </div>
-        <dl>
-            <dt>Date Of Birth</dt>
-            <dd>@Html.DisplayFor(model => model.DOB)</dd>
-            <dt>Height (in cms)</dt>
-            <dd>@Html.DisplayFor(model => model.Height)</dd>
-            <dt>Weight (in kgs)</dt>
-            <dd>@Html.DisplayFor(model => model.Weight)</dd>
-        </dl>
+        <div class="bottom-wrapper">
+          <img class="qr-code" src="/images/qrcode.png"/>
+        </div>
       </div>
     </div>
   </div>
