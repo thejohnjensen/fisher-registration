@@ -61,7 +61,7 @@
     {
 
         <h3><a asp-action="Details" asp-route-id="@item.ProjectId">@Html.DisplayFor(modelItem => item.Name)</a></h3>
-        <div class="captain-details">Vessel:@Html.DisplayFor(modelItem => item.GetCaptainVessel.Vessel.Name)</div>
+        <div class="captain-details"><a style="text-decoration: none;" asp-controller="Projects" asp-action="VesselRatings">Vessel:@Html.DisplayFor(modelItem => item.GetCaptainVessel.Vessel.Name)</a></div>
         <div class="project-details-container">
             <div class="project-start-container">
                 <div>
