@@ -17,8 +17,9 @@ namespace Fish_Registration.Models
         public virtual CaptainVessel GetCaptainVessel { get; set; }
 
         public string UserId { get; set; }
-        
+        [DataType(DataType.Date)]
         public DateTime Start { get; set; }
+        [DataType(DataType.Date)]
         public DateTime End { get; set; }
 
     }
