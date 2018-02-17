@@ -1,36 +1,66 @@
-#idCard.modal .modal-dialog .modal-content .modal-header {
-  border-bottom: none;
-  background-color: #2C52A3;
-  color: #fff; }
+#idCard.modal .modal-dialog {
+  width: 355px; }
+  #idCard.modal .modal-dialog .modal-content .modal-header {
+    border-bottom: none;
+    background-color: #2C52A3;
+    color: #fff; }
+    #idCard.modal .modal-dialog .modal-content .modal-header button.close {
+      color: #fff; }
+    #idCard.modal .modal-dialog .modal-content .modal-header .modal-title {
+      font-size: 25px; }
+  #idCard.modal .modal-dialog .modal-content .modal-body {
+    height: 520px;
+    vertical-align: top;
+    background-color: #1E1D2F;
+    color: #fff; }
+    #idCard.modal .modal-dialog .modal-content .modal-body .background-watermark {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 170px;
+      height: 190px;
+      background: url(/images/offshore-logo.png);
+      background-repeat: no-repeat;
+      opacity: 0.2; }
+    #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: stretch; }
+      #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container .id-card-aside {
+        margin-left: 10%; }
+      #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container dl {
+        font-size: 20px; }
+        #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container dl dd {
+          margin: 0 0 15px 0; }
+    #idCard.modal .modal-dialog .modal-content .modal-body .bottom-wrapper {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      margin: 40px 0; }
 
-#idCard.modal .modal-dialog .modal-content .modal-body {
-  vertical-align: top;
-  background-color: #1E1D2F;
-  color: #fff; }
-  #idCard.modal .modal-dialog .modal-content .modal-body .background-watermark {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 170px;
-    height: 190px;
-    background: url(/images/offshore-logo.png);
-    background-repeat: no-repeat;
-    opacity: 0.5; }
-  #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: stretch; }
-    #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container .id-card-aside {
-      padding: 20px;
-      margin-left: 12%; }
-  #idCard.modal .modal-dialog .modal-content .modal-body dl {
-    margin: 40px;
+.public-user-id-wrapper {
+  margin: 2% 0 0 0; }
+  .public-user-id-wrapper p {
+    color: #666;
+    text-align: center; }
+  .public-user-id-wrapper h3 {
+    font-size: 25px;
+    text-align: center;
+    font-weight: 500;
+    color: #2C52A3; }
+  .public-user-id-wrapper .captain-details {
+    text-align: center;
+    font-style: italic;
+    font-weight: 400;
     font-size: 20px; }
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 640px) {
-  #idCard.modal .modal-dialog .modal-content .modal-body .id-card-photo-container .id-card-aside {
-    margin-left: 0; } }
+  .public-user-id-wrapper .project-details-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px; }
+    .public-user-id-wrapper .project-details-container .project-details-divider {
+      margin: 0 50px; }
 
 body {
   font-family: 'Barlow Condensed', sans-serif;

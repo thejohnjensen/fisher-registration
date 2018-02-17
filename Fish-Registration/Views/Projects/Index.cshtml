@@ -4,9 +4,9 @@
     ViewData["Title"] = "RateVessel";
 }
 
-<h2>Index</h2>
+<h2>My Projects</h2>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
@@ -50,4 +50,38 @@
         </tr>
 }
     </tbody>
-</table>
+</table>*@
+
+<div class="public-user-id-wrapper">
+    <p>
+        <a class="btn btn-primary" asp-controller="Projects" asp-action="Create">Create new</a>    
+    </p>
+    <hr />
+    @foreach (var item in Model)
+    {
+
+        <h3><a asp-action="Details" asp-route-id="@item.ProjectId">@Html.DisplayFor(modelItem => item.Name)</a></h3>
+        <div class="captain-details">Vessel:@Html.DisplayFor(modelItem => item.GetCaptainVessel.Vessel.Name)</div>
+        <div class="project-details-container">
+            <div class="project-start-container">
+                <div>
+                    Departure Date
+                </div>
+                <div>
+                    @Html.DisplayFor(modelItem => item.Start)
+                </div>
+            </div>
+            <div class="project-details-divider">to</div>
+            <div class="project-end-container">
+                <div>
+                    Return Date
+                </div>
+                <div>
+                    @Html.DisplayFor(modelItem => item.End)
+                </div>
+            </div>
+        </div>
+
+        <hr />
+    }
+</div>
