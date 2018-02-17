@@ -33,32 +33,107 @@ body {
     padding-left: $padding;
     padding-right: $padding;
 
-    #div_profile_image {
+    .div_profile_image {
       text-align: center;
       margin-top: 20px; }
     
-    #profile_name {
+    .profile_name {
       text-align: center;
       font-size: 42px;
     }
+
+    .rate_vessel_top {
+        text-align: center;
+      }
+
+    .rate_vessel_top h1 {
+      font-size: 2em;
+    }
+
+    .rate_vessel_top h2 {
+      color: #2C52A3;
+      font-size: 3.2em;
+      font-weight: bold;
+      margin-top: 0px;
+    }
+
+    .rate_vessel_top h3 {
+      color: grey;
+      font-size: 1.5em;
+      margin: 0px;
+      font-style: italic;
+      letter-spacing: .05em;
+    }
+
+    .div_profile_image p {
+      color: grey;
+      font-size: 1.2em;
+      letter-spacing: .05em;
+      }
+
+    .flag_group {
+      display: inline-block;
+      margin: 10px;
+    }
     
-    #list_container {
+    .flag_group img {
+      width: 100px;
+    }
+    
+    .list_container {
       text-align: center;
       margin: 20px 0;
     }
+
+    .list_container ul {
+        padding: 0;
+      }
+
+    .list_container ul li{
+      list-style-type: none;
+      text-align: center;
+    }
+
+    .list_container .rate_vessel_options .worker_tag {
+      color: grey;
+      font-size: 1.2em;
+      letter-spacing: .05em;
+      }
     
-    #profile_list {
+    .profile_list {
       width: 24em;
       margin: auto;
       text-align: left;
     }
     
-    #profile_list li {
-      list-style-type: none;
+    .profile_list li {
       font-size: 24px;
     }
-    
-    #profile_buttons {
+
+    .rate_vessel_options {
+      width: 24em;
+      margin: auto;
+      text-align: left;
+    }
+
+    .rate_vessel_options li {
+      font-size: 2em;
+    }
+
+    .rate_vessel_options p {
+      font-size: 0.8em;
+    }
+
+    .br-theme-fontawesome-stars .br-widget a:after {
+      font-size: 2em;
+      margin: 0 5px 0 0;
+    }
+
+    .br-theme-fontawesome-stars .br-widget {
+      height: 58px;
+    }
+
+    .button_container {
       text-align: center;
 
       .btn {
@@ -73,15 +148,15 @@ body {
         border-radius: 5px;
       }
 
-      #projects_button {
+      .projects_button {
         background-color: #04AFE8;
       }
       
-      #id_button {
+      .id_button {
         background-color: #2C52A3;
       }
       
-      #edit_button {
+      .edit_button {
         background-color: #727272;
       }
     }

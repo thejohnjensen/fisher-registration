@@ -178,5 +178,17 @@ namespace Fish_Registration.Controllers
         {
             return _context.Project.Any(e => e.ProjectId == id);
         }
+
+        // For the rate vessel page
+         public IActionResult RateVessel()
+        {
+            return View();
+        }
+
+        // For the rate vessel page
+         public IActionResult VesselRatings()
+        {
+            return View();
+        }
     }
 }

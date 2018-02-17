@@ -83,25 +83,70 @@ body {
   body .body-content {
     padding-left: 15px;
     padding-right: 15px; }
-    body .body-content #div_profile_image {
+    body .body-content .div_profile_image {
       text-align: center;
       margin-top: 20px; }
-    body .body-content #profile_name {
+    body .body-content .profile_name {
       text-align: center;
       font-size: 42px; }
-    body .body-content #list_container {
+    body .body-content .rate_vessel_top {
+      text-align: center; }
+    body .body-content .rate_vessel_top h1 {
+      font-size: 2em; }
+    body .body-content .rate_vessel_top h2 {
+      color: #2C52A3;
+      font-size: 3.2em;
+      font-weight: bold;
+      margin-top: 0px; }
+    body .body-content .rate_vessel_top h3 {
+      color: grey;
+      font-size: 1.5em;
+      margin: 0px;
+      font-style: italic;
+      letter-spacing: .05em; }
+    body .body-content .div_profile_image p {
+      color: grey;
+      font-size: 1.2em;
+      letter-spacing: .05em; }
+    body .body-content .flag_group {
+      display: inline-block;
+      margin: 10px; }
+    body .body-content .flag_group img {
+      width: 100px; }
+    body .body-content .list_container {
       text-align: center;
       margin: 20px 0; }
-    body .body-content #profile_list {
+    body .body-content .list_container ul {
+      padding: 0; }
+    body .body-content .list_container ul li {
+      list-style-type: none;
+      text-align: center; }
+    body .body-content .list_container .rate_vessel_options .worker_tag {
+      color: grey;
+      font-size: 1.2em;
+      letter-spacing: .05em; }
+    body .body-content .profile_list {
       width: 24em;
       margin: auto;
       text-align: left; }
-    body .body-content #profile_list li {
-      list-style-type: none;
+    body .body-content .profile_list li {
       font-size: 24px; }
-    body .body-content #profile_buttons {
+    body .body-content .rate_vessel_options {
+      width: 24em;
+      margin: auto;
+      text-align: left; }
+    body .body-content .rate_vessel_options li {
+      font-size: 2em; }
+    body .body-content .rate_vessel_options p {
+      font-size: 0.8em; }
+    body .body-content .br-theme-fontawesome-stars .br-widget a:after {
+      font-size: 2em;
+      margin: 0 5px 0 0; }
+    body .body-content .br-theme-fontawesome-stars .br-widget {
+      height: 58px; }
+    body .body-content .button_container {
       text-align: center; }
-      body .body-content #profile_buttons .btn {
+      body .body-content .button_container .btn {
         display: block;
         margin: 10px auto;
         border: none;
@@ -111,11 +156,11 @@ body {
         font-size: 20px;
         width: 10em;
         border-radius: 5px; }
-      body .body-content #profile_buttons #projects_button {
+      body .body-content .button_container .projects_button {
         background-color: #04AFE8; }
-      body .body-content #profile_buttons #id_button {
+      body .body-content .button_container .id_button {
         background-color: #2C52A3; }
-      body .body-content #profile_buttons #edit_button {
+      body .body-content .button_container .edit_button {
         background-color: #727272; }
   body #qrCode {
     margin: 15px; }
