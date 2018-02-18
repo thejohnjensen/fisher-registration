@@ -190,5 +190,10 @@ namespace Fish_Registration.Controllers
         {
             return View();
         }
+
+        public IActionResult VesselsIndex()
+        {
+            return View();
+        }
     }
 }
