@@ -1,21 +1,28 @@
 ﻿<div>
-
-     class="public-user-id-wrapper">
     <p>
-        <a class="btn btn-primary" asp-controller="Projects" asp-action="Create">Create new</a>
+        <form class="form-inline">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" placeholder="Vessel Name">
+                    </div>
+                <button class="btn btn-default">Search</button>
+                </div>
+            </div>
+        </form>
     </p>
     <hr />
-  
 
+    <div style="text-align: center;">
         <h3><a asp-controller="projects" asp-action="VesselRatings" >Sea Dragon</a></h3>
-        <div class="captain-details"><a style="text-decoration: none;" asp-controller="Projects" asp-action="VesselRatings">Current Captain: Som nang</a></div>
+        <div class="captain-details">
+            <a style="text-decoration: none;" asp-controller="Projects" asp-action="VesselRatings"><em>Current Captain: Som nang</em></a>
+        </div>
        
-        <h3><a asp-action="Details">Sea Dragon</a></h3>
-        <div class="captain-details"><a style="text-decoration: none;" asp-controller="Projects" asp-action="VesselRatings">Current Captain: Som nang</a></div>
+        <h3><a asp-action="Details">Spiced Rum</a></h3>
+        <div class="captain-details"><a style="text-decoration: none;" asp-controller="Projects" asp-action="VesselRatings"><em>Current Captain: Captain Morgan</em></a></div>
 
-        <h3><a asp-action="Details">Sea Dragon</a></h3>
-         <div class="captain-details"><a style="text-decoration: none;" asp-controller="Projects" asp-action="VesselRatings">Current Captain: Som nang</a></div>
-
-       
-   
+        <h3><a asp-action="Details">Jaws</a></h3>
+        <div class="captain-details"><a style="text-decoration: none;" asp-controller="Projects" asp-action="VesselRatings"><em>Current Captain: Lt. Dan</em></a></div>
+    </div>
 </div>
